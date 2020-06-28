@@ -1,0 +1,6 @@
+####These are required#######
+pip intsall django=2.2
+pip install cryptography
+pip install django_mongoengine
+pip install allauth
+pip install djongo
