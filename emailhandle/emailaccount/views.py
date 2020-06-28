@@ -24,9 +24,9 @@ def emailaccountsetting(request):
         name=name[0]
         if EmailAccounts.objects.filter(e_id=k).exists():
             e=EmailAccounts.objects.filter(e_id=k)
-            para={'username':a.username,'pr':a.provider,'email':a.email,'name':name,'account':True,'e':e,'id':a.id,'default':acdetail.defaultaccount,'form':form}
+            para={'username':a.username,'pr':a.provider,'email':a.email,'name':name,'account':True,'image':acdetail.profile,'e':e,'id':a.id,'default':acdetail.defaultaccount,'form':form}
         else:
-            para={'username':a.username,'email':a.email,'pr':a.provider,'name':name,'account':False,'id':a.id,'default':acdetail.defaultaccount,'form':form}
+            para={'username':a.username,'email':a.email,'pr':a.provider,'name':name,'account':False,'image':acdetail.profile,'id':a.id,'default':acdetail.defaultaccount,'form':form}
 
         if check=="account":
             return render(request,'emailaccount/addemail.html',para)
