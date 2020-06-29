@@ -78,7 +78,7 @@ def mailbox(request):
         return redirect('accounting:login')
 def contactfile(request):
     type=request.POST.get('type')
-    if request.method == 'POST' and request.FILES['myfile']:
+    if type=='start' and request.FILES['myfile']:
         id=request.POST.get('id')
         ids=int(id)
         a=Account.objects.get(pk=ids)
