@@ -197,6 +197,11 @@ def remove(request):
     if type=="start":
         id=request.POST.get('button')
         e=EmailAccounts.objects.filter(pk=id)
+        email=EmailAccounts.objects.get(pk=id)
+        account_detail=Accountdetail.objects.get(acc_id=k)
+        if email.e_email==account_detail.defaultaccount:
+            account_detail.defaultaccount=None
+            account_detail.save()
         e.delete()
         data={
             'is_delete':'de'
